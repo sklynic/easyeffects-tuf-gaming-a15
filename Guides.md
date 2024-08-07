@@ -2,7 +2,7 @@
 
 ## Preparation
 
-Before we start, you needs the Dolby Atmos driver `Dolby Atmos CMedia driver for ROG_TUF`, which you can get either from ASUS website (newest version) or `C:\eSupport\eDriver\Software\Win32App\Dolby\Dolby Atmos CMedia driver for ROG_TUF` folder (factory version). (THere should have no difference between them, though.)
+Before we start, you needs the Dolby Atmos driver `Dolby Atmos CMedia driver for ROG_TUF`, which you can get either from ASUS website (newest version) or `C:\eSupport\eDriver\Software\Win32App\Dolby\Dolby Atmos CMedia driver for ROG_TUF` folder (factory version). (ThSere should have no difference between them, though.)
 
 ## Steps
 
@@ -22,7 +22,7 @@ For example, on my device (FA507RM) the output is:
 
 #### Windows
 
-You can find it in Device Manager. Check on internet for step-by-steps.
+You can find it in Device Manager. Check on internet for steps.
 
 ### Find the right tuning xml
 
