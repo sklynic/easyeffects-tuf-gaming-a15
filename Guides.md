@@ -2,7 +2,9 @@
 
 ## Preparation
 
-Before we start, you needs the Dolby Atmos driver `Dolby Atmos CMedia driver for ROG_TUF`, which you can get either from ASUS support website (newest version) or `C:\eSupport\eDriver\Software\Win32App\Dolby\Dolby Atmos CMedia driver for ROG_TUF` folder (factory version). (There should have no difference between them, though.)
+Before we start, you needs the Dolby Atmos driver `Dolby Atmos CMedia driver for ROG_TUF`, which you can get either from ASUS support website (newest version) or `C:\eSupport\eDriver\Software\Win32App\Dolby\Dolby Atmos CMedia driver for ROG_TUF` folder (factory version).
+
+There should have no difference between them, though. You can choose between the two freely.
 
 ## Steps
 
