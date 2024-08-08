@@ -1,5 +1,5 @@
 # easyeffects-tuf-gaming-a15
-Guides to convert factory audio tuning settings to EasyEffect presets, based on factory drivers for ASUS TUF Gaming A15 (2022) laptop speaker.
+Guides to convert factory audio tuning settings to EasyEffect presets, based on factory drivers for ASUS TUF Gaming A15 (2022) (model a.k.a. FA507) laptop speaker.
 
 The presets you get can be used in Windows with equalizerAPO, if you don't want to install the C-media control panel and Dolby Access stuff from MS Store.
 
