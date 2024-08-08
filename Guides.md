@@ -2,7 +2,7 @@
 
 ## Preparation
 
-Before we start, you needs the Dolby Atmos driver `Dolby Atmos CMedia driver for ROG_TUF`, which you can get either from ASUS website (newest version) or `C:\eSupport\eDriver\Software\Win32App\Dolby\Dolby Atmos CMedia driver for ROG_TUF` folder (factory version). (ThSere should have no difference between them, though.)
+Before we start, you needs the Dolby Atmos driver `Dolby Atmos CMedia driver for ROG_TUF`, which you can get either from ASUS support website (newest version) or `C:\eSupport\eDriver\Software\Win32App\Dolby\Dolby Atmos CMedia driver for ROG_TUF` folder (factory version). (There should have no difference between them, though.)
 
 ## Steps
 
@@ -18,7 +18,7 @@ For example, on my device (FA507RM) the output is:
 
 `Bus 005 Device 002: ID 0b05:6208 ASUSTek Computer, Inc. C-Media(R) Audio`
 
-`0b05:6208` is the device id we needs for next steps.
+`0b05:6208` is the device id we need for next steps.
 
 #### Windows
 
@@ -26,7 +26,7 @@ You can find it in Device Manager. Check on internet for steps.
 
 ### Find the right tuning xml
 
-Under the driver folder, find a xml file named `USB_VID_xxxx_PID_xxxx.xml`.
+Under the driver folder, find a xml file named `USB_VID_xxxx_PID_xxxx.xml`. Replace them with device id we found before.
 
 For my device it's `USB_VID_0B05_PID_6208.xml`.
 
@@ -46,9 +46,9 @@ Let's find the corresponding frequency. Find `band_20_freq` in the file. The res
 
 ` <band_20_freq fs_44100="43,129,215,301,431,603,775,947,1206,1550,2067,2756,3618,4651,5685,7063,8958,11025,13781,18777" fs_48000="47,141,234,328,469,656,844,1031,1313,1688,2250,3000,3750,4688,5813,7125,9000,11250,13875,19688"/>`
 
-We will need the `fs_48000` series.
+We will use the `fs_48000` series.
 
-Now, open a office app and create a `.csv` file. In the first row write down the frequency, in the second row write down the tuning result (all the number should be multiply with 0.1).
+Now, create a `.csv` file. In the first row write down the frequency, in the second row write down the tuning result (all the number should be multiply with 0.1).
 
 The result should looks like this:
 
