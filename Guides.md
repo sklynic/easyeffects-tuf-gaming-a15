@@ -8,7 +8,7 @@ There should have no difference between them, though. You can choose between the
 
 ## Steps
 
-### Find your audio card's device id
+### 1. Find your audio card's device id
 
 #### Linux
 
@@ -20,19 +20,32 @@ For example, on my device (FA507RM) the output is:
 
 `Bus 005 Device 002: ID 0b05:6208 ASUSTek Computer, Inc. C-Media(R) Audio`
 
-`0b05:6208` is the device id we need for next steps.
+`0b05:6208` is the device id we need for next steps, which former one is VID (vendor id) and latter one is PID (product id).
+
+If your laptop's sound card is connected through PCIe (for example, FA617), run this command instead:
+
+`lspci -nn | grep Audio`
+
+Example output:
+
+`01:00.1 Audio device [0403]: NVIDIA Corporation GA106 High Definition Audio Controller [10de:228e] (rev a1)
+`
+
+`10de:228e` is the device id.
 
 #### Windows
 
-You can find it in Device Manager. Check on internet for steps.
+Open Device Manager and find your sound card, double click the device or  right click and select Properties, go to the Details tab and select Hardware ID to view its PID and VID.
 
-### Find the right tuning xml
+### 2. Find the right tuning xml
 
 Under the driver folder, find a xml file named `USB_VID_xxxx_PID_xxxx.xml`. Replace them with device id we found before.
 
 For my device it's `USB_VID_0B05_PID_6208.xml`.
 
-### Extract and process tuning data
+For PCIe sound card: `DEV_xxxx_SUBSYS_xxxxxxxx_PCI_SUBSYS_xxxxxxxx.xml`, which the four digit string is device PID. (You can further verify if that's the correct turing file for your device: on line 20 `<security-key value="INTELAUDIO\FUNC_01&amp;VEN_10EC&amp;DEV_0294&amp;......` both VID and PID is marked here by `VEN` and `DEV`.)
+
+### 3. Extract and process tuning data
 
 Use your favorite text editor to open it. In the xml file you can find different presets, which you may already familiar in Dolby Access.
 
@@ -76,7 +89,11 @@ The result should looks like this:
 | 13875 | 15   |
 | 19688 | 15   |
 
-### Generate the presets
+#### Notes
+
+There are way more contents in tuning xml file but I cannot figure it out what they are and what they do, and simply skipped them; this is not reverse-engineering after all, as I didn't look into Dolby DAX3 software's code for exact implemtation. Lucky, it seems the only string we used above is (made from) each laptop speaker's Impulse Responses, which is good enough for most daily audio turning purposes.
+
+### 4. Generate the presets
 
 Open [AutoEq](https://autoeq.app) site. In the headphone selection, choose "Flat".
 
@@ -84,4 +101,6 @@ Then, chick the "Show advanced" button on left panel. In the "Target" section, a
 
 Find "Sound signature" section, and click the second button "Open CSV file". Select the `.csv` file we just created.
 
-Finally, in the right panel choose "EasyEffects". Now you have a preset that can be used in EasyEffects (or equalizerAPO, it's the same). Enjoy!
+Finally, choose "EasyEffects" in the side panel. Now you have a preset that can be used in EasyEffects (or choose equalizerAPO, as both EasyEffects and EqualizerAPO uses APO file format). 
+
+Now import preset into EasyEffects and Enjoy!
